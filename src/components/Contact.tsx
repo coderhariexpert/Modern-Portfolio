@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Canvas } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import Toast from './Toast';
-import emailjs from 'emailjs-com'; // Import EmailJS
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
+import Toast from "./Toast";
+import emailjs from "emailjs-com"; // Import EmailJS
 const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [errors, setErrors] = useState({ name: '', email: '', message: '' });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" });
   const [showToast, setShowToast] = useState(false);
 
   const validateEmail = (email) => {
@@ -18,20 +22,20 @@ const Contact = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-    setErrors((prev) => ({ ...prev, [name]: '' }));
+    setErrors((prev) => ({ ...prev, [name]: "" }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     const newErrors = {};
-    if (!formData.name) newErrors.name = 'Name is mandatory';
+    if (!formData.name) newErrors.name = "Name is mandatory";
     if (!formData.email) {
-      newErrors.email = 'Email is mandatory';
+      newErrors.email = "Email is mandatory";
     } else if (!validateEmail(formData.email)) {
-      newErrors.email = 'Invalid email address';
+      newErrors.email = "Invalid email address";
     }
-    if (!formData.message) newErrors.message = 'Message is mandatory';
+    if (!formData.message) newErrors.message = "Message is mandatory";
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
@@ -46,23 +50,28 @@ const Contact = () => {
     };
 
     emailjs
-      .send('service_3agizmr', 'template_bcwbmj8', templateParams, 't-pza433cy762vOWt')
+      .send(
+        "service_3agizmr",
+        "template_bcwbmj8",
+        templateParams,
+        "t-pza433cy762vOWt"
+      )
       .then(
         (response) => {
-          console.log('Message sent successfully:', response);
+          console.log("Message sent successfully:", response);
           setShowToast(true);
           setTimeout(() => setShowToast(false), 3000);
-          setFormData({ name: '', email: '', message: '' });
+          setFormData({ name: "", email: "", message: "" });
         },
         (error) => {
-          console.error('Error sending message:', error);
+          console.error("Error sending message:", error);
         }
       );
   };
 
   // 3D MacBook Component
   const MacBook = () => {
-    const { scene } = useGLTF('/public/assets/lap/scene.gltf'); // Path to your 3D MacBook Pro model (GLB format)
+    const { scene } = useGLTF("/assets/lap/scene.gltf"); // Path to your 3D MacBook Pro model (GLB format)
     return <primitive object={scene} scale={1.25} position={[0, -5, 0]} />;
   };
 
@@ -77,7 +86,9 @@ const Contact = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-white mb-4">Get in Touch</h2>
-          <p className="text-gray-400">Let's work together on your next project</p>
+          <p className="text-gray-400">
+            Let's work together on your next project
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -97,9 +108,13 @@ const Contact = () => {
                 placeholder="Your Name"
                 value={formData.name}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.name ? 'ring-2 ring-red-500' : ''}`}
+                className={`w-full px-4 py-3 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                  errors.name ? "ring-2 ring-red-500" : ""
+                }`}
               />
-              {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
+              {errors.name && (
+                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+              )}
             </div>
             <div>
               <input
@@ -108,9 +123,13 @@ const Contact = () => {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.email ? 'ring-2 ring-red-500' : ''}`}
+                className={`w-full px-4 py-3 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                  errors.email ? "ring-2 ring-red-500" : ""
+                }`}
               />
-              {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
             </div>
             <div>
               <textarea
@@ -119,9 +138,13 @@ const Contact = () => {
                 placeholder="Your Message"
                 value={formData.message}
                 onChange={handleInputChange}
-                className={`w-full px-4 py-3 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.message ? 'ring-2 ring-red-500' : ''}`}
+                className={`w-full px-4 py-3 bg-gray-900 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                  errors.message ? "ring-2 ring-red-500" : ""
+                }`}
               />
-              {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+              )}
             </div>
             <motion.button
               whileHover={{ scale: 1.05 }}

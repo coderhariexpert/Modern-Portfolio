@@ -1,48 +1,52 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import ProjectCard from './ProjectCard';
+import React, { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import ProjectCard from "./ProjectCard";
 
 const projects = [
   {
     title: "Omnifood Website",
-    description: "The Omnifood frontend project helped learn HTML, CSS, and basic JavaScript to create a responsive, interactive food delivery webpage.",
-    image: "/public/assets/omnifood.png",
-    tags: ["HTML", "CSS","Javascript"],
-    liveDemoUrl: "https://coderhariexpert.github.io/OmniFood-Project/", 
+    description:
+      "The Omnifood frontend project helped learn HTML, CSS, and basic JavaScript to create a responsive, interactive food delivery webpage.",
+    image: "/assets/omnifood.png",
+    tags: ["HTML", "CSS", "Javascript"],
+    liveDemoUrl: "https://coderhariexpert.github.io/OmniFood-Project/",
     sourceCodeUrl: "https://github.com/coderhariexpert/OmniFood-Project",
   },
   {
     title: "Gradient BackGround Calculator",
-    description: "The Gradient Background Calculator project helped learn HTML, CSS, and basic JavaScript With Gradient Background",
-    image: "/public/assets/calc.png",
+    description:
+      "The Gradient Background Calculator project helped learn HTML, CSS, and basic JavaScript With Gradient Background",
+    image: "/assets/calc.png",
     tags: ["HTML", "CSS", "Javascript"],
-    liveDemoUrl: "https://coderhariexpert.github.io/Gradient-Calc/", 
-    sourceCodeUrl: "https://github.com/coderhariexpert/Gradient-Calc", 
+    liveDemoUrl: "https://coderhariexpert.github.io/Gradient-Calc/",
+    sourceCodeUrl: "https://github.com/coderhariexpert/Gradient-Calc",
   },
   {
     title: "Basic Crud Web App",
     description: "Helps To Learn MERN Stack And Dark-Light Theme Toggle",
-    image: "/public/assets/crud.png",
+    image: "/assets/crud.png",
     tags: ["React", "Mongodb", "Tailwind"],
-    liveDemoUrl: "https://basic-crud-immy.onrender.com", 
-    sourceCodeUrl: "https://github.com/coderhariexpert/CRUDAPP", 
+    liveDemoUrl: "https://basic-crud-immy.onrender.com",
+    sourceCodeUrl: "https://github.com/coderhariexpert/CRUDAPP",
   },
   {
     title: "Random Password Generator",
-    description: "Helps To Learn About Javascript And CSS With Clipboard Button",
-    image: "/public/assets/rdp.png",
+    description:
+      "Helps To Learn About Javascript And CSS With Clipboard Button",
+    image: "/assets/rdp.png",
     tags: ["HTML", "CSS", "Javascript"],
-    liveDemoUrl: "https://coderhariexpert.github.io/Random-Password-Generator/", 
-    sourceCodeUrl: "https://github.com/coderhariexpert/Random-Password-Generator", 
+    liveDemoUrl: "https://coderhariexpert.github.io/Random-Password-Generator/",
+    sourceCodeUrl:
+      "https://github.com/coderhariexpert/Random-Password-Generator",
   },
   {
     title: "Todo App",
     description: "Helps To Learn About Javascript With LocalStorage API",
-    image: "/public/assets/todo.png",
+    image: "/assets/todo.png",
     tags: ["HTML", "CSS", "Javascript", "Localstorage API"],
-    liveDemoUrl: "https://todo-app-lemon-eight.vercel.app/", 
-    sourceCodeUrl: "https://github.com/coderhariexpert/Todo-App", 
-  }
+    liveDemoUrl: "https://todo-app-lemon-eight.vercel.app/",
+    sourceCodeUrl: "https://github.com/coderhariexpert/Todo-App",
+  },
 ];
 
 const Projects = () => {
@@ -56,7 +60,7 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2  className="text-4xl font-bold text-white mb-4">Projects</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">Projects</h2>
           {/* Underline with fixed width */}
           <motion.div
             className="h-1 bg-blue-500 mt-2 mx-auto"

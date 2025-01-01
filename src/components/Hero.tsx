@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import IntroText from './IntroText';
-import BackgroundEffects from './BackgroundEffects';
+import React from "react";
+import { motion } from "framer-motion";
+import IntroText from "./IntroText";
+import BackgroundEffects from "./BackgroundEffects";
 
 const Hero = () => {
   return (
@@ -25,7 +25,14 @@ const Hero = () => {
                 viewBox="0 0 100 100"
                 fill="none"
               >
-                <circle cx="50" cy="50" r="45" stroke="white" strokeWidth="2" fill="transparent" />
+                <circle
+                  cx="50"
+                  cy="50"
+                  r="45"
+                  stroke="white"
+                  strokeWidth="2"
+                  fill="transparent"
+                />
                 <path
                   d="M50 10 Q70 30, 50 50 Q30 30, 50 10"
                   stroke="white"
@@ -35,7 +42,7 @@ const Hero = () => {
               </svg>
               {/* Profile Image */}
               <img
-                src="/public/assets/profile.jpg"
+                src="/assets/profile.jpg"
                 alt="Profile"
                 className="absolute inset-0 w-full h-full object-cover shadow-2xl z-10"
               />
