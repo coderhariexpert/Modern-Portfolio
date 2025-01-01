@@ -1,0 +1,11 @@
+Model Information:
+* title:	ASUS ROG Strix Scar 17 2023  g733 gaming laptop
+* source:	https://sketchfab.com/3d-models/asus-rog-strix-scar-17-2023-g733-gaming-laptop-d76e0eadc57d4dbd9e9850dc922de249
+* author:	Gin Kern Publish (https://sketchfab.com/GinKern)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "ASUS ROG Strix Scar 17 2023  g733 gaming laptop" (https://sketchfab.com/3d-models/asus-rog-strix-scar-17-2023-g733-gaming-laptop-d76e0eadc57d4dbd9e9850dc922de249) by Gin Kern Publish (https://sketchfab.com/GinKern) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
