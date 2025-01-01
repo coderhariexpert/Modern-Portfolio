@@ -5,7 +5,8 @@ import { OrbitControls, useGLTF } from '@react-three/drei';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import Toast from './Toast';
 import emailjs from 'emailjs-com'; // Import EmailJS
-
+import {dotenv} from "dotenv";
+dotenv.config();
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [errors, setErrors] = useState({ name: '', email: '', message: '' });
